@@ -1,0 +1,94 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <Windows.h>
+
+using namespace std;
+
+int main()
+{
+	inicio:
+
+	srand(time(0));
+	string final;
+	string opcao;
+	string comparacao[3] = { "pedra", "papel", "tesoura" };
+	int bot = rand() % 3;
+	string escolhadobot = comparacao[bot];
+	cout << "Escolha pedra, papel ou tesoura: ";
+	cin >> opcao;
+
+	if (opcao == escolhadobot)
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nA partida foi empatada\n" << endl;
+	}
+	else if (opcao == "tesoura" && escolhadobot == "papel")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce venceu parabens :) \n" << endl;
+	}
+	else if (opcao == "tesoura" && escolhadobot == "pedra")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce perdeu :( \n" << endl;
+	}
+	else if (opcao == "pedra" && escolhadobot == "tesoura")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce venceu parabens :) \n" << endl;
+	}
+	else if (opcao == "pedra" && escolhadobot == "papel")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce perdeu :( \n" << endl;
+	}
+	else if (opcao == "papel" && escolhadobot == "pedra")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce venceu parabens :)  \n" << endl;
+	}
+	else if (opcao == "papel" && escolhadobot == "tesoura")
+	{
+		cout << "\nSua escolha foi: " << opcao << endl;
+		cout << "\nA escolha do bot foi: " << escolhadobot << endl;
+		cout << "\nVoce perdeu :( \n" << endl;
+	}
+	else
+	{
+		cout << "\nEssa opcao nao existe\n" << endl;
+		cout << "Deseja tentar denovo? s/n: ";
+		cin >> final;
+		if (final == "s")
+		{
+			system("cls");
+			goto inicio;
+		}
+		else
+		{
+			cout << "\nPrograma encerrado com sucesso" << endl;
+			Sleep(2000);
+			exit(-1);
+		}
+	}
+	cout << "Deseja tentar denovo? s/n: ";
+	cin >> final;
+	if (final == "s")
+	{
+		system("cls");
+		goto inicio;
+	}
+	else
+	{
+		cout << "\nPrograma encerrado com sucesso" << endl;
+		Sleep(2000);
+		exit(-1);
+	}
+	return 0;
+}
